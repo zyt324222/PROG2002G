@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details - Charity Events Platform</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-container">
+                <a href="index.html" class="logo">💝 Charity Heart</a>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="search.html" class="nav-link">Search Events</a></li>
+
+                    <li><a href="auth.html" class="nav-link btn-auth">Login/Register</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Loading State -->
+    <div id="loading" class="loading">
+        <div class="spinner"></div>
+        <p>Loading event details...</p>
+    </div>
+
+    <!-- Error Message -->
+    <div id="error-message" class="container" style="display: none;">
+        <div class="error-message">
+            <h3>😔 Failed to Load</h3>
+            <p id="error-text">Unable to load event information. Please try again later.</p>
+            <a href="/" class="btn">Back to Home</a>
+        </div>
+    </div>
+
+    <!-- Event Details Content -->
+    <div id="event-content" class="container" style="display: none;">
+        <!-- Event Header -->
+        <div class="event-detail">
+            <div id="event-header" class="event-header">
+                <div class="event-header-overlay">
+                    <h1 id="event-title"></h1>
+                    <p id="event-organization"></p>
+                </div>
+            </div>
+            
+            <div class="event-content">
+                <!-- Basic Event Info -->
+                <div class="event-info">
+                    <div class="info-item">
+                        <h3>📅 Date & Time</h3>
+                        <p id="event-date"></p>
+                    </div>
+                    <div class="info-item">
+                        <h3>📍 Location</h3>
+                        <p id="event-location"></p>
+                    </div>
+                    <div class="info-item">
+                        <h3>🏷️ Category</h3>
+                        <p id="event-category"></p>
+                    </div>
+                    <div class="info-item">
+                        <h3>💰 Ticket Price</h3>
+                        <p id="event-price"></p>
+                    </div>
+                </div>
+
+                <!-- Event Description -->
+                <div class="card">
+                    <div class="card-body">
+                        <h3>📝 Event Description</h3>
+                        <p id="event-description"></p>
+                    </div>
+                </div>
+
+                <!-- Fundraising Progress -->
+                <div class="card" id="fundraising-section">
+                    <div class="card-body">
+                        <h3>🎯 Fundraising Goal & Progress</h3>
+                        <div class="event-info">
+                            <div class="info-item">
+                                <h4>Goal Amount</h4>
+                                <p id="goal-amount"></p>
+                            </div>
+                            <div class="info-item">
+                                <h4>Current Amount</h4>
+                                <p id="current-amount"></p>
+                            </div>
+                            <div class="info-item">
+                                <h4>Progress</h4>
+                                <p id="progress-percentage"></p>
+                            </div>
+                        </div>
+                        <div class="progress">
+                            <div id="progress-bar" class="progress-bar" style="width: 0%;">0%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Attendance Info -->
+                <div class="card" id="attendance-section">
+                    <div class="card-body">
+                        <h3>👥 Attendance</h3>
+                        <div class="event-info">
+                            <div class="info-item">
+                                <h4>Current Attendees</h4>
+                                <p id="current-attendees"></p>
+                            </div>
+                            <div class="info-item">
+                                <h4>Maximum Capacity</h4>
+                                <p id="max-attendees"></p>
+                            </div>
+                            <div class="info-item">
+                                <h4>Remaining Spots</h4>
+                                <p id="remaining-spots"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Organizer Info -->
+                <div class="card">
+                    <div class="card-body">
+                        <h3>🏢 Organizer Info</h3>
+                        <div class="event-info">
+                            <div class="info-item">
+                                <h4>Organization</h4>
+                                <p id="org-name"></p>
+                            </div>
+                            <div class="info-item">
+                                <h4>Email</h4>
+                                <p id="org-email"></p>
+                            </div>
+                            <div class="info-item">
+                                <h4>Phone</h4>
+                                <p id="org-phone"></p>
+                            </div>
+                        </div>
+                        <p id="org-description"></p>
+                        <div style="margin-top: 1rem;">
+                            <a id="org-website" href="#" target="_blank" class="btn btn-secondary" style="display: none;">Visit Website</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Register Button -->
+                <div style="text-align: center; margin: 2rem 0;">
+                    <button id="register-btn" class="btn" style="font-size: 1.2rem; padding: 15px 40px;">
+                        🎫 Register Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Registration Modal -->
+    <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>🚧 Feature Under Development</h2>
+            <p>The registration feature is currently under development. Stay tuned!</p>
+            <p>For registration, please contact the organizer or try again later.</p>
+            <button class="btn" onclick="closeModal()">Got it</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Charity Heart Platform. All Rights Reserved. | Let love spread, let hope continue</p>
+        </div>
+    </footer>
+
+    <script src="./js/common.js"></script>
+    <script src="./js/user-session.js"></script>
+    <script src="./js/event-details.js"></script>
+</body>
+</html>

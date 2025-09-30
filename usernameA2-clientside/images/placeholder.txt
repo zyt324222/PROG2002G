@@ -1,0 +1,21 @@
+这个文件夹用于存放活动图片。
+
+由于这是一个演示项目，您可以在这里放置以下类型的图片：
+
+1. default-event.jpg - 默认活动图片
+2. charity-dinner.jpg - 慈善晚宴图片
+3. marathon.jpg - 马拉松活动图片
+4. auction.jpg - 拍卖会图片
+5. concert.jpg - 音乐会图片
+6. book-sale.jpg - 图书义卖图片
+7. volunteer.jpg - 志愿活动图片
+8. carnival.jpg - 嘉年华图片
+9. hiking.jpg - 徒步活动图片
+10. hero-bg.jpg - 首页背景图片
+
+建议图片尺寸：
+- 活动卡片图片：400x200px
+- 活动详情头图：1200x400px
+- 首页背景图：1920x1080px
+
+您可以从免费图片网站（如Unsplash、Pexels）下载相关的慈善活动图片。
